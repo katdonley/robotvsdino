@@ -1,16 +1,17 @@
 from weapon import Weapon
-from herd import Herd
+import random
 
 
 class Robot:
 
     def __init__(self, name, health):
-        self.name = ""
-        self.health = int
-        self.weapon = [Weapon("sword", 50), Weapon("axe", 40), Weapon("pitchfork", 30)]
+        self.name = name
+        self.health = health
+        self.weapon = Weapon
 
-    def atack(self, dinosaur):
-        self.dinosaur = Herd
+    def attack(self, dinosaur):
+        dinosaur.health -= int(self.weapon.attack_power)
+        print(f'The dinosaurs name is {dinosaur.name}')
 
 
     
