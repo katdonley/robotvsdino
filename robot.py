@@ -1,19 +1,17 @@
 from weapon import Weapon
+from herd import Herd
 
 
 class Robot:
 
     def __init__(self, name, health):
         self.name = ""
-        self.health = 100
-        self.weapon = Weapon
+        self.health = int
+        self.weapon = [Weapon("sword", 50), Weapon("axe", 40), Weapon("pitchfork", 30)]
 
     def atack(self, dinosaur):
-        pass
+        self.dinosaur = Herd
 
 
-    weapon_one = Weapon("sword", 50)
-    weapon_two = Weapon("axe", 40)
-    weapon_three = Weapon("pitchfork", 30)
-
+    
     

@@ -4,12 +4,10 @@ from dinosaur import Dinosaur
 class Herd:
 
     def __init__(self):
-        self.dinosaur = []
+        self.dinosaur = [Dinosaur("Ralph", 50, 100), Dinosaur("Paul", 40, 100), Dinosaur("Chuck", 30, 100)]
         
-    def create_herd(self):
-        pass
+    def create_herd(self, select_dino):
+        self.select_dino = input("Choose your dino: ")
 
 
-    dino_one = Dinosaur("Ralph", 50, 100)
-    dino_two = Dinosaur("Paul", 40, 100)
-    dino_three = Dinosaur("Chuck", 30, 100)
+    

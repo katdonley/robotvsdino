@@ -1,10 +1,12 @@
+from fleet import Fleet
+
 class Dinosaur:
 
     def __init__(self, name, attack_power, health):
         self.name = ""
-        self.health = 100
-        self.attack_power = 50
+        self.health = int
+        self.attack_power = int
         
 
     def attack(self, robot):
-        pass
+        self.robot = Fleet
