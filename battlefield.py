@@ -1,7 +1,7 @@
 
 from fleet import Fleet
 from herd import Herd
-import random
+
 
 
 class Battlefield:
@@ -14,15 +14,12 @@ class Battlefield:
         self.welcome_player = "Welcome to Robots vs. Dinosaurs!"
 
     def battle(self):
-        print("Kyle, 100"[0], "Chad, 100"[1], "Pierre, 100"[2])
-        self.robot_choice = self.fleet.robot[input('Enter the number of the robot you want to play')]
-        proceed = False
-        while proceed == False:
-            if self.robot_choice == self.fleet.robot[0]:
-                proceed = True
-                print(f'Your first robot is {self.fleet.robot[0]}')
-        #elif self.begin_battle == self.herd:
-           # print(f'Select your dinosaur {self.herd}')
+        self.show_robo_opponent_options()
+        self.robot_choice = self.fleet.robot[int(input('Enter the number of the robot you want to play: '))]
+        self.show_dino_opponent_options()
+        self.dino_choice = self.herd.dinosaur[int(input('enter the number of the dinosaur you want to play: '))]
+        self.dino_turn()
+        self.robo_turn()
 
     def dino_turn(self):
         attacking_dino = self.herd.dinosaur[0]
@@ -30,17 +27,26 @@ class Battlefield:
         attacking_dino.attack(attacked_robot)
 
     def robo_turn(self):
-        attacking_robo = self.fleet.robot[0]
+        attacking_robo = self.robot_choice
         attacked_dino = self.herd.dinosaur[0]
         attacking_robo.attack(attacked_dino)
 
     def show_dino_opponent_options(self):
-        #self.dino_opponent = [Dinosaur]
-        pass
+        dino_counter = 0
+        for dinosaur in self.herd.dinosaur:
+            print(f'{dino_counter}, {dinosaur.name}')
+            dino_counter += 1
 
     def show_robo_opponent_options(self):
-        #self.robo_opponent = [Robot]
-        pass
+        robo_counter = 0
+        for robot in self.fleet.robot:
+            print(f'{robo_counter}, {robot.name}')
+            robo_counter += 1
+
+    def show_robo_weapon_options(self):
+        robo_weapon_counter = 0
+        for weapon in self.fleet.robot.weapon.name:
+            print(f'{robo_weapon_counter}')
 
     def display_winners(self):
         pass
