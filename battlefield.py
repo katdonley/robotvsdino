@@ -27,9 +27,11 @@ class Battlefield:
         attacking_dino.attack(attacked_robot)
 
     def robo_turn(self):
-        attacking_robo = self.robot_choice
+        attacking_robo = self.fleet.robot[0]
         attacked_dino = self.herd.dinosaur[0]
         attacking_robo.attack(attacked_dino)
+        self.herd.dinosaur.health = 100
+        self.herd.dinosaur.health -= int(self.fleet.robot.weapon.attack_power)
 
     def show_dino_opponent_options(self):
         dino_counter = 0
@@ -61,3 +63,6 @@ class Battlefield:
         self.show_robo_opponent_options()
         self.display_winners()
 
+#robot.health == 100
+        #robot.health -= self.attack_power
+        #print(f'The robot {robot.name} was hit ')
