@@ -11,7 +11,7 @@ class Battlefield:
         self.herd = Herd()
            
     def display_welcome(self):
-        self.welcome_player = "Welcome to Robots vs. Dinosaurs!"
+        print("Welcome to Robots vs. Dinosaurs!")
 
     def battle(self):
         self.show_robo_opponent_options()
@@ -30,8 +30,7 @@ class Battlefield:
         attacking_robo = self.fleet.robot[0]
         attacked_dino = self.herd.dinosaur[0]
         attacking_robo.attack(attacked_dino)
-        self.herd.dinosaur.health = 100
-        self.herd.dinosaur.health -= int(self.fleet.robot.weapon.attack_power)
+        self.herd.dinoasur.health -= int(self.fleet.robot.weapon.attack_power)
 
     def show_dino_opponent_options(self):
         dino_counter = 0
